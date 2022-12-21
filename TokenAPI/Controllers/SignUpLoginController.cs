@@ -51,10 +51,11 @@ namespace TokenAPI.Controllers
             };
 
             _context.Users.Add(user);
-            await _context.SaveChangesAsync();  
+            await _context.SaveChangesAsync();
 
             return Ok("User successfully created!");
             //return Ok(user);
+            //return Ok(user.VerificationToken);
         }
         [HttpPost("Login")]
         public async Task<IActionResult> Login(UserLoginRequest request)
